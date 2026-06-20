@@ -7,6 +7,14 @@ MundialStreams is a small macOS status bar app for browsing public stream source
 
 The app does not host, proxy, modify, or sell any stream. It only lists links already exposed by those public pages and opens the selected source in a local macOS WebKit player.
 
+## Demo
+
+<video src="./demo%20gh.mp4" controls width="100%"></video>
+
+If the video preview does not render in your GitHub client, open it directly:
+
+[Watch the demo video](./demo%20gh.mp4)
+
 ## What The App Does
 
 - Shows a simple `⚽️` icon in the macOS status bar.
