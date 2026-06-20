@@ -15,9 +15,9 @@ Download the latest build from:
 
 ## Demo
 
-<video src="./demo%20gh.mp4" controls width="100%"></video>
+![MundialStreams demo](assets/demo.gif)
 
-If the video preview does not render in your GitHub client, open it directly:
+For the full-resolution video:
 
 [Watch the demo video](./demo%20gh.mp4)
 
