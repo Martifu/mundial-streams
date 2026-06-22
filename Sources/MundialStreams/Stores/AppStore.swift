@@ -23,6 +23,7 @@ final class AppStore: ObservableObject {
 
     private let crackStreamsClient = CrackStreamsClient()
     private let timStreamsClient = TimStreamsClient()
+    private let laHinchadaClient = LaHinchadaClient()
     private var streamWindows: [StreamWindowController] = []
 
     init() {
@@ -164,6 +165,8 @@ final class AppStore: ObservableObject {
             try await crackStreamsClient.fetchCatalog()
         case .timStreams:
             try await timStreamsClient.fetchCatalog()
+        case .laHinchada:
+            try await laHinchadaClient.fetchCatalog()
         }
     }
 }

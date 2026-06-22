@@ -3,6 +3,7 @@ import Foundation
 enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
     case crackStreams
     case timStreams
+    case laHinchada
 
     var id: String { rawValue }
 
@@ -10,6 +11,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .crackStreams: "CrackStreams"
         case .timStreams: "TimStreams"
+        case .laHinchada: "La Hinchada"
         }
     }
 
@@ -17,6 +19,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .crackStreams: "Soccer-stream + backup servers"
         case .timStreams: "timstreams.net API publica"
+        case .laHinchada: "lahinchada.xyz eventos"
         }
     }
 
@@ -24,6 +27,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .crackStreams: "soccerball"
         case .timStreams: "play.tv.fill"
+        case .laHinchada: "sportscourt.fill"
         }
     }
 
@@ -31,6 +35,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .crackStreams: [.events, .channels]
         case .timStreams: [.events, .channels, .replays]
+        case .laHinchada: [.events]
         }
     }
 }
@@ -63,6 +68,16 @@ struct StreamSource: Identifiable, Hashable, Sendable {
     let name: String
     let url: URL
     let isVIP: Bool
+    let requestReferer: String?
+    let requestOrigin: String?
+
+    init(name: String, url: URL, isVIP: Bool, requestReferer: String? = nil, requestOrigin: String? = nil) {
+        self.name = name
+        self.url = url
+        self.isVIP = isVIP
+        self.requestReferer = requestReferer
+        self.requestOrigin = requestOrigin
+    }
 
     var id: String { "\(name)|\(url.absoluteString)" }
     var isPublic: Bool { !isVIP }

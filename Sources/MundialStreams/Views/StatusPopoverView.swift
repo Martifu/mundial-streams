@@ -81,7 +81,7 @@ struct StatusPopoverView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .frame(width: 300)
+            .frame(width: 420)
 
             Picker(L10n.text(.type, language), selection: $store.selectedKind) {
                 ForEach(store.availableKinds) { kind in
@@ -318,7 +318,7 @@ struct StatusPopoverView: View {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(.black.opacity(0.92))
 
-                WebStreamView(url: source.url, reloadToken: inlineReloadToken)
+                WebStreamView(source: source, reloadToken: inlineReloadToken)
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .overlay {

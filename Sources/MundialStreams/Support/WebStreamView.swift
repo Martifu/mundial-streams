@@ -2,8 +2,10 @@ import SwiftUI
 @preconcurrency import WebKit
 
 struct WebStreamView: NSViewRepresentable {
-    let url: URL
+    let source: StreamSource
     let reloadToken: Int
+
+    private var url: URL { source.url }
 
     func makeCoordinator() -> Coordinator {
         Coordinator()
@@ -36,10 +38,17 @@ struct WebStreamView: NSViewRepresentable {
 
         var request = URLRequest(url: url)
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        let origin = sourceOrigin(for: url)
+        let origin = requestOrigin(for: source)
         request.setValue(origin.referer, forHTTPHeaderField: "Referer")
         request.setValue(origin.origin, forHTTPHeaderField: "Origin")
         webView.load(request)
+    }
+
+    private func requestOrigin(for source: StreamSource) -> (referer: String, origin: String) {
+        if let referer = source.requestReferer, let origin = source.requestOrigin {
+            return (referer, origin)
+        }
+        return sourceOrigin(for: source.url)
     }
 
     private func sourceOrigin(for url: URL) -> (referer: String, origin: String) {

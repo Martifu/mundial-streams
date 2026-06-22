@@ -90,7 +90,7 @@ struct PlayerWindowView: View {
                 .fill(.black.opacity(0.92))
                 .liquidGlassPanel(cornerRadius: 22)
 
-            WebStreamView(url: session.selectedSource.url, reloadToken: reloadToken)
+            WebStreamView(source: session.selectedSource, reloadToken: reloadToken)
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
         .overlay {

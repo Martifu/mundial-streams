@@ -1,9 +1,10 @@
 # MundialStreams
 
-MundialStreams is a small macOS status bar app for browsing public stream sources from two selectable bases:
+MundialStreams is a small macOS status bar app for browsing public stream sources from selectable bases:
 
 - **CrackStreams**: reads the Soccer page and its backup server buttons.
 - **TimStreams**: reads the public endpoints used by `timstreams.net`.
+- **La Hinchada**: reads the public events JSON used by `lahinchada.xyz/eventos`.
 
 The app does not host, proxy, modify, or sell any stream. It only lists links already exposed by those public pages and opens the selected source in a local macOS WebKit player.
 
@@ -25,7 +26,7 @@ For the full-resolution video:
 
 - Shows a simple `⚽️` icon in the macOS status bar.
 - Opens a popup with event/source lists.
-- Lets you switch between **CrackStreams** and **TimStreams**.
+- Lets you switch between **CrackStreams**, **TimStreams**, and **La Hinchada**.
 - Plays a selected source inside the popup.
 - Lets you pop the player out into a separate resizable window.
 - Copies either the raw source URL or an iframe embed snippet.
@@ -57,6 +58,7 @@ The app currently reads:
 - `https://api.nuevasantino.xyz/api/live-upcoming`
 - `https://api.nuevasantino.xyz/api/channels`
 - `https://api.nuevasantino.xyz/api/replays`
+- `https://lahinchada.xyz/eventos/combined_events.json`
 
 Player windows load the specific source URL selected by the user.
 
@@ -105,6 +107,7 @@ The app is plain Swift/SwiftUI/AppKit/WebKit code. The important files are:
 
 - `Sources/MundialStreams/Services/CrackStreamsClient.swift`
 - `Sources/MundialStreams/Services/TimStreamsClient.swift`
+- `Sources/MundialStreams/Services/LaHinchadaClient.swift`
 - `Sources/MundialStreams/Views/StatusPopoverView.swift`
 - `Sources/MundialStreams/Support/WebStreamView.swift`
 
