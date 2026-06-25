@@ -4,6 +4,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
     case crackStreams
     case timStreams
     case laHinchada
+    case laCancha
 
     var id: String { rawValue }
 
@@ -12,6 +13,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         case .crackStreams: "CrackStreams"
         case .timStreams: "TimStreams"
         case .laHinchada: "La Hinchada"
+        case .laCancha: "La Cancha"
         }
     }
 
@@ -20,6 +22,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         case .crackStreams: "Soccer-stream + backup servers"
         case .timStreams: "timstreams.net API publica"
         case .laHinchada: "lahinchada.xyz eventos"
+        case .laCancha: "lacancha.tv en vivo"
         }
     }
 
@@ -28,6 +31,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         case .crackStreams: "soccerball"
         case .timStreams: "play.tv.fill"
         case .laHinchada: "sportscourt.fill"
+        case .laCancha: "rectangle.split.2x1.fill"
         }
     }
 
@@ -36,6 +40,7 @@ enum StreamProvider: String, CaseIterable, Identifiable, Sendable {
         case .crackStreams: [.events, .channels]
         case .timStreams: [.events, .channels, .replays]
         case .laHinchada: [.events]
+        case .laCancha: [.events, .channels]
         }
     }
 }

@@ -81,7 +81,7 @@ struct StatusPopoverView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .frame(width: 420)
+            .frame(width: 540)
 
             Picker(L10n.text(.type, language), selection: $store.selectedKind) {
                 ForEach(store.availableKinds) { kind in

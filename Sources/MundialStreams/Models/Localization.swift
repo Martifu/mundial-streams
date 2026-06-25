@@ -66,6 +66,7 @@ enum L10n {
         case crackSubtitle
         case timSubtitle
         case laHinchadaSubtitle
+        case laCanchaSubtitle
         case footballStream
         case replay
     }
@@ -103,6 +104,7 @@ enum L10n {
         .crackSubtitle: "Soccer-stream + backup servers",
         .timSubtitle: "API pública de timstreams.net",
         .laHinchadaSubtitle: "Eventos de lahinchada.xyz",
+        .laCanchaSubtitle: "En vivo y pantalla doble de lacancha.tv",
         .footballStream: "Stream de futbol",
         .replay: "Replay"
     ]
@@ -140,6 +142,7 @@ enum L10n {
         .crackSubtitle: "Soccer-stream + backup servers",
         .timSubtitle: "Public timstreams.net API",
         .laHinchadaSubtitle: "lahinchada.xyz events",
+        .laCanchaSubtitle: "Live and split-screen streams from lacancha.tv",
         .footballStream: "Football stream",
         .replay: "Replay"
     ]
@@ -177,6 +180,7 @@ enum L10n {
         .crackSubtitle: "Soccer-stream + servidores backup",
         .timSubtitle: "API pública do timstreams.net",
         .laHinchadaSubtitle: "Eventos de lahinchada.xyz",
+        .laCanchaSubtitle: "Ao vivo e tela dupla de lacancha.tv",
         .footballStream: "Stream de futebol",
         .replay: "Replay"
     ]
@@ -188,6 +192,7 @@ extension StreamProvider {
         case .crackStreams: L10n.text(.crackSubtitle, language)
         case .timStreams: L10n.text(.timSubtitle, language)
         case .laHinchada: L10n.text(.laHinchadaSubtitle, language)
+        case .laCancha: L10n.text(.laCanchaSubtitle, language)
         }
     }
 }

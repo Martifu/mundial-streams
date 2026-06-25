@@ -61,6 +61,11 @@ struct WebStreamView: NSViewRepresentable {
             || host.contains("vimeo") {
             return ("https://timstreams.net/", "https://timstreams.net")
         }
+        if host.contains("lacancha")
+            || host.contains("embedindia")
+            || host == "embed.st" {
+            return ("https://lacancha.tv/es/en-vivo", "https://lacancha.tv")
+        }
         return ("https://crckstreams.ch/", "https://crckstreams.ch")
     }
 
